@@ -1,0 +1,17 @@
+
+.vs/Utils.Extension.Methods/v15/.suo
+*.lock
+*.ide
+*.dll
+*.pdb
+*.cache
+*.props
+*.targets
+*.txt
+Utils.Extension.Methods/obj/Debug/netstandard2.0/Utils.Extension.Methods.AssemblyInfo.cs
+Utils.Extension.Methods/bin/Debug/netstandard2.0/Utils.Extension.Methods.deps.json
+Utils.Extension.Methods.Example/obj/Debug/netcoreapp2.0/Utils.Extension.Methods.Example.csproj.CopyComplete
+Utils.Extension.Methods.Example/obj/Debug/netcoreapp2.0/Utils.Extension.Methods.Example.AssemblyInfo.cs
+Utils.Extension.Methods.Example/bin/Debug/netcoreapp2.0/Utils.Extension.Methods.Example.runtimeconfig.json
+Utils.Extension.Methods.Example/bin/Debug/netcoreapp2.0/Utils.Extension.Methods.Example.runtimeconfig.dev.json
+Utils.Extension.Methods.Example/bin/Debug/netcoreapp2.0/Utils.Extension.Methods.Example.deps.json
