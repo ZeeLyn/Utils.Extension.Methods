@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Utils.Extension.Methods
 {
@@ -15,6 +12,16 @@ namespace Utils.Extension.Methods
 		public static string ToJson(this object value)
 		{
 			return value == null ? default : JsonConvert.SerializeObject(value);
+		}
+
+		/// <summary>
+		/// 将对象序列化成json字符串
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public static string ToJson(this object value, JsonSerializerSettings settings)
+		{
+			return value == null ? default : JsonConvert.SerializeObject(value, settings);
 		}
 
 

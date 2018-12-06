@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Utils.Extension.Methods
 {
@@ -11,7 +9,7 @@ namespace Utils.Extension.Methods
 		/// </summary>
 		/// <param name="value"></param>
 		/// <returns></returns>
-		public static long ToTimeStamp(this DateTime value)
+		public static long ToTimestamp(this DateTime value)
 		{
 			return (long)(TimeZoneInfo.ConvertTimeToUtc(value) - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
 		}

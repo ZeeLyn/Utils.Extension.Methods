@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 
 namespace Utils.Extension.Methods
 {
@@ -9,6 +10,11 @@ namespace Utils.Extension.Methods
 			if (bytes == null || bytes.Length == 0)
 				return string.Empty;
 			return Encoding.UTF8.GetString(bytes);
+		}
+
+		public static Stream AsStream(this byte[] bytes)
+		{
+			return new MemoryStream(bytes);
 		}
 	}
 }

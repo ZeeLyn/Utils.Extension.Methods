@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -66,39 +67,32 @@ namespace Utils.Extension.Methods
 		/// <param name="value"></param>
 		/// <param name="separator"></param>
 		/// <returns></returns>
-		public static IEnumerable<T> Split<T>(this string value, params char[] separator)
+		public static List<T> Split<T>(this string value, params char[] separator)
 		{
-			if (string.IsNullOrWhiteSpace(value)) yield break;
-			var query = value.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-			foreach (var item in query)
-			{
-				yield return item.ConvertTo<T>();
-			}
+			if (string.IsNullOrWhiteSpace(value))
+				return null;
+			var query = value.Split(separator);
+			return query.Select(p => p.ConvertTo<T>()).ToList();
 		}
 
 		/// <summary>
-		/// 将字符串按指定字符串进行分割，返回集合
+		/// 将字符串按字符进行分割，返回集合
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="value"></param>
-		/// <param name="pattern"></param>
-		/// <param name="regexOptions"></param>
+		/// <param name="separator"></param>
 		/// <returns></returns>
-		public static IEnumerable<T> Split<T>(this string value, string pattern, RegexOptions regexOptions = RegexOptions.IgnoreCase)
+		public static List<T> Split<T>(this string value, params string[] separator)
 		{
-			if (string.IsNullOrWhiteSpace(value)) yield break;
-			var query = Regex.Split(value, pattern, regexOptions);
-			foreach (var item in query)
-			{
-				yield return item.ConvertTo<T>();
-			}
+			if (string.IsNullOrWhiteSpace(value))
+				return null;
+			var query = value.Split(separator, StringSplitOptions.None);
+			return query.Select(p => p.ConvertTo<T>()).ToList();
 		}
 
 		public static byte[] AsBytes(this string value)
 		{
-			if (value.IsNullOrWhiteSpace())
-				return null;
-			return Encoding.UTF8.GetBytes(value);
+			return value.IsNullOrWhiteSpace() ? null : Encoding.UTF8.GetBytes(value);
 		}
 	}
 }
