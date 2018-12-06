@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Utils.Extension.Methods
 {
@@ -26,10 +24,5 @@ namespace Utils.Extension.Methods
 				return defaultValue;
 			}
 		}
-
-		//public static DateTime TimeStampToUnixTime(this long value)
-		//{
-		//	return null;
-		//}
 	}
 }

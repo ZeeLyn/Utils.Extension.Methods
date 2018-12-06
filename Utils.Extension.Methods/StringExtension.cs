@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
 
 namespace Utils.Extension.Methods
 {
@@ -43,7 +44,7 @@ namespace Utils.Extension.Methods
 		/// <returns></returns>
 		public static bool IsDateTime(this string value)
 		{
-			return value.NotNullOrWhiteSpace() && DateTime.TryParse(value, out var _);
+			return value.NotNullOrWhiteSpace() && DateTime.TryParse(value, out _);
 		}
 
 		/// <summary>
@@ -56,15 +57,48 @@ namespace Utils.Extension.Methods
 			return value.NotNullOrWhiteSpace() && value.Length == 11 && new Regex(@"^[1]+[3,4,5,7,8]+\d{9}").IsMatch(value);
 		}
 
+
+
 		/// <summary>
-		/// Json字符串反序列化
+		/// 将字符串按字符进行分割，返回集合
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="value"></param>
+		/// <param name="separator"></param>
 		/// <returns></returns>
-		public static T JsonToObject<T>(this string value)
+		public static IEnumerable<T> Split<T>(this string value, params char[] separator)
 		{
-			return value.IsNullOrWhiteSpace() ? default : JsonConvert.DeserializeObject<T>(value);
+			if (string.IsNullOrWhiteSpace(value)) yield break;
+			var query = value.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+			foreach (var item in query)
+			{
+				yield return item.ConvertTo<T>();
+			}
+		}
+
+		/// <summary>
+		/// 将字符串按指定字符串进行分割，返回集合
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="value"></param>
+		/// <param name="pattern"></param>
+		/// <param name="regexOptions"></param>
+		/// <returns></returns>
+		public static IEnumerable<T> Split<T>(this string value, string pattern, RegexOptions regexOptions = RegexOptions.IgnoreCase)
+		{
+			if (string.IsNullOrWhiteSpace(value)) yield break;
+			var query = Regex.Split(value, pattern, regexOptions);
+			foreach (var item in query)
+			{
+				yield return item.ConvertTo<T>();
+			}
+		}
+
+		public static byte[] AsBytes(this string value)
+		{
+			if (value.IsNullOrWhiteSpace())
+				return null;
+			return Encoding.UTF8.GetBytes(value);
 		}
 	}
 }
