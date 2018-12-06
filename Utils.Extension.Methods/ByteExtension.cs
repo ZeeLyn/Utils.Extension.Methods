@@ -2,7 +2,7 @@
 
 namespace Utils.Extension.Methods
 {
-	public static class ByteExtension
+	public static partial class UtilsExtension
 	{
 		public static string AsString(this byte[] bytes)
 		{
