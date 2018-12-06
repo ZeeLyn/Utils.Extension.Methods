@@ -1,7 +1,0 @@
-﻿@page
-@using Microsoft.AspNetCore.Http
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
-@Html.Pager("/", int.Parse(this.HttpContext.Request.Query.FirstOrDefault(p => p.Key == "page").Value), 20, 1000)

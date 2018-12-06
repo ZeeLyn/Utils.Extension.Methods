@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.Extension.Methods", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils.Extension.Methods.Example", "Utils.Extension.Methods.Example\Utils.Extension.Methods.Example.csproj", "{F2E47205-AD2A-4B16-BF75-719301C82D1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils.Extension.Methods.MVC", "Utils.Extension.Methods.MVC\Utils.Extension.Methods.MVC.csproj", "{454B8E0D-0E44-4EF7-9785-F5E3C5039571}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils.Extension.Methods.MVC.Example", "Utils.Extension.Methods.MVC.Example\Utils.Extension.Methods.MVC.Example.csproj", "{6E3C22B1-D0A1-4C44-9B92-3389DEC6508D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{F2E47205-AD2A-4B16-BF75-719301C82D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E47205-AD2A-4B16-BF75-719301C82D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2E47205-AD2A-4B16-BF75-719301C82D1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{454B8E0D-0E44-4EF7-9785-F5E3C5039571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{454B8E0D-0E44-4EF7-9785-F5E3C5039571}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{454B8E0D-0E44-4EF7-9785-F5E3C5039571}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{454B8E0D-0E44-4EF7-9785-F5E3C5039571}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E3C22B1-D0A1-4C44-9B92-3389DEC6508D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E3C22B1-D0A1-4C44-9B92-3389DEC6508D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E3C22B1-D0A1-4C44-9B92-3389DEC6508D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E3C22B1-D0A1-4C44-9B92-3389DEC6508D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
